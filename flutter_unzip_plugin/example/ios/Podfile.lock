@@ -1,0 +1,30 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_unzip_plugin (0.0.1):
+    - Flutter
+    - SSZipArchive (= 2.2.3)
+  - SSZipArchive (2.2.3)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_unzip_plugin (from `.symlinks/plugins/flutter_unzip_plugin/ios`)
+  - SSZipArchive (~> 2.2.3)
+
+SPEC REPOS:
+  trunk:
+    - SSZipArchive
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_unzip_plugin:
+    :path: ".symlinks/plugins/flutter_unzip_plugin/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_unzip_plugin: 6b7fd60ecae5e9f3c650ae114a7da8c63926e322
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+
+PODFILE CHECKSUM: e9d8e8848cc9cd10443d821eac629a85afb967ae
+
+COCOAPODS: 1.9.1
