@@ -37,7 +37,7 @@ public class FlutterUnzipPlugin implements FlutterPlugin, MethodCallHandler {
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals("unzip")) {
-      Log.d("MyZipDecoder", "Starting...");
+      Log.d("MyZipDecoder", "Starting v0.02...");
       String zipPath = call.argument("zipPath");
       String extractPath = call.argument("extractPath");
 
