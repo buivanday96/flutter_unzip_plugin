@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
+import net.lingala.zip4j.progress.ProgressMonitor;
 
 import io.flutter.Log;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -12,6 +13,8 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
+
+import static net.lingala.zip4j.progress.ProgressMonitor.State.BUSY;
 
 
 /** FlutterUnzipPlugin */
@@ -48,8 +51,24 @@ public class FlutterUnzipPlugin implements FlutterPlugin, MethodCallHandler {
         } catch (ZipException e) {
           e.printStackTrace();
         }
+
+
+        ProgressMonitor mon = zipFile.getProgressMonitor();
+        while (mon.getState() == BUSY) {
+          System.out.println(zipFile.getProgressMonitor().getPercentDone());
+          try {
+            Thread.sleep(10);
+          } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+          }
+
+          if(mon.getResult() == ProgressMonitor.Result.SUCCESS){
+            result.success(true);
+            break;
+          }
+        }
       }
-      result.success(true);
+
     } else {
       result.notImplemented();
     }
