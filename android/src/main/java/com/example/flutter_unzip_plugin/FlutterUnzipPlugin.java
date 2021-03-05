@@ -57,7 +57,7 @@ public class FlutterUnzipPlugin implements FlutterPlugin, MethodCallHandler {
         while (mon.getState() == BUSY) {
           System.out.println(zipFile.getProgressMonitor().getPercentDone());
           try {
-            Thread.sleep(10);
+            Thread.sleep(300);
           } catch (InterruptedException e) {
             throw new RuntimeException(e);
           }
