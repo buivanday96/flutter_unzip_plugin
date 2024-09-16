@@ -5,9 +5,8 @@ homepage: https://github.com/buivanday96/flutter_unzip_plugin
 repository: https://github.com/buivanday96/flutter_unzip_plugin
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.20.0"
-
+  sdk: ^3.5.1
+  
 dependencies:
   flutter:
     sdk: flutter

@@ -11,7 +11,7 @@ class FlutterUnzipPlugin {
     return version;
   }
 
-  Future<bool> extractToDir({File zipFile, Directory directory}) async {
+  Future<bool> extractToDir({required File zipFile, required Directory directory}) async {
     _channel.setMethodCallHandler((call) {
       if (call.method == 'process') {
         final int process = call.arguments;
